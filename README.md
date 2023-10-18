@@ -1,7 +1,7 @@
 # Insanely Fast Whisper (CLI)
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ochen1/insanely-fast-whisper-cli/blob/main/LICENSE)
-[![Python Version](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9-blue)](https://www.python.org/downloads/)
+[![Python Version](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org/downloads/)
 
 Powered by 🤗 *Transformers* & *Optimum* and based on **[Vaibhavs10/insanely-fast-whisper](https://github.com/Vaibhavs10/insanely-fast-whisper)**.
 
