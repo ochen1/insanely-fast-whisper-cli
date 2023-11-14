@@ -41,14 +41,19 @@ def asr_cli(model, device, dtype, batch_size, better_transformer, chunk_length, 
     audio_file_name = os.path.splitext(os.path.basename(audio_file))[0]
     srt_filename = f"{audio_file_name}.srt"
     with open(srt_filename, 'w') as srt_file:
+        prev = 0
         for index, chunk in enumerate(outputs['chunks']):
-            start_time = seconds_to_srt_time_format(chunk['timestamp'][0])
-            end_time = seconds_to_srt_time_format(chunk['timestamp'][1])
+            prev, start_time = seconds_to_srt_time_format(prev, chunk['timestamp'][0])
+            prev, end_time = seconds_to_srt_time_format(prev, chunk['timestamp'][1])
             srt_file.write(f"{index + 1}\n")
             srt_file.write(f"{start_time} --> {end_time}\n")
-            srt_file.write(f"{chunk['text'].strip()}\n\n")
+            srt_file.write(f"{chunk['text'].strip()}\n\n")        
 
-def seconds_to_srt_time_format(seconds):
+def seconds_to_srt_time_format(prev,seconds):
+    if not(isinstance(seconds, int) or isinstance(seconds, float)):
+        seconds = prev
+    else:
+        prev = seconds
     hours = seconds // 3600
     seconds %= 3600
     minutes = seconds // 60
@@ -57,7 +62,7 @@ def seconds_to_srt_time_format(seconds):
     hours = int(hours)
     minutes = int(minutes)
     seconds = int(seconds)
-    return f"{hours:02d}:{minutes:02d}:{int(seconds):02d},{milliseconds:03d}"
+    return (prev, f"{hours:02d}:{minutes:02d}:{int(seconds):02d},{milliseconds:03d}")
 
 if __name__ == '__main__':
     asr_cli()
