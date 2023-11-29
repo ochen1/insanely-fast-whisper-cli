@@ -17,7 +17,12 @@ Powered by 🤗 *Transformers* & *Optimum* and based on **[Vaibhavs10/insanely-f
 
 ## Installation
 
-Coming soon.
+- Clone git repository with `git clone <repository URL>`
+- Switch to that folder with `cd <repository name>`
+- Create a new Python environment with `python -m venv venv`
+- Activate environment with `source venv/bin/activate`
+- Install packages from requirements with `pip install -r requirements.txt`
+- Run program with `python insanely-fast-whisper.py <command>`
 
 ## Usage
 
