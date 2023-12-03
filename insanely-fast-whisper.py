@@ -47,10 +47,10 @@ def asr_cli(model, device, dtype, batch_size, better_transformer, chunk_length, 
             prev, end_time = seconds_to_srt_time_format(prev, chunk['timestamp'][1])
             srt_file.write(f"{index + 1}\n")
             srt_file.write(f"{start_time} --> {end_time}\n")
-            srt_file.write(f"{chunk['text'].strip()}\n\n")        
+            srt_file.write(f"{chunk['text'].strip()}\n\n")
 
-def seconds_to_srt_time_format(prev,seconds):
-    if not(isinstance(seconds, int) or isinstance(seconds, float)):
+def seconds_to_srt_time_format(prev, seconds):
+    if not (isinstance(seconds, int) or isinstance(seconds, float)):
         seconds = prev
     else:
         prev = seconds
