@@ -4,3 +4,4 @@ torchaudio
 git+https://github.com/huggingface/transformers
 accelerate
 optimum
+click
