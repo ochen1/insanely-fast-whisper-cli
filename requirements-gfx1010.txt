@@ -1,0 +1,5 @@
+#accelerate
+#optimum
+click
+transformers
+torch==1.13.1+rocm5.2
