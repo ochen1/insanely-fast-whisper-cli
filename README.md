@@ -65,6 +65,8 @@ Have questions or feedback? Feel free to create an issue!
 
 🌟 **Star this repository if you find it helpful!**
 
+[![Star History Chart](https://api.star-history.com/svg?repos=ochen1/insanely-fast-whisper-cli&type=Date)](https://star-history.com/#ochen1/insanely-fast-whisper-cli&Date)
+
 ---
 
 [![GitHub Issues](https://img.shields.io/github/issues/ochen1/insanely-fast-whisper-cli.svg)](https://github.com/ochen1/insanely-fast-whisper-cli/issues)
