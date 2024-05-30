@@ -40,7 +40,7 @@ def asr_cli(model, device, dtype, batch_size, better_transformer, chunk_length, 
     # Save ASR chunks to an SRT file
     audio_file_name = os.path.splitext(os.path.basename(audio_file))[0]
     srt_filename = f"{audio_file_name}.srt"
-    with open(srt_filename, 'w') as srt_file:
+    with open(srt_filename, 'w', encoding="utf-8") as srt_file:
         prev = 0
         for index, chunk in enumerate(outputs['chunks']):
             prev, start_time = seconds_to_srt_time_format(prev, chunk['timestamp'][0])
